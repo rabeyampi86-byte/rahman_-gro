@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Chicken - Rahman Agro & Poultry Farm</title>
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="order-page page-offset">
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+
+        <div class="icon">
+            <a href="index.html">
+                <img src="images/logo2.png" alt="Rahman Agro & Poultry Farm">
+            </a>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="services.html">SERVICE</a></li>
+                <li><a href="order.html">ORDER</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <!-- ORDER SECTION -->
+
+    <div class="order-container">
+
+        <h1>Order Fresh Chicken</h1>
+
+        <p class="order-intro">
+            Choose your chicken, select the quantity and place your order easily.
+        </p>
+
+
+        <!-- CHICKEN PRODUCTS -->
+
+        <div class="chicken-products">
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand d-flex align-items-center" href="index.html">
+                        <img src="images/logo2.png" alt="Logo" style="height:44px;" class="me-2">Rahman Agro
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="mainNav">
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+                            <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="order.html">ORDER</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+                        </ul>
+                        <form class="d-flex" onsubmit="event.preventDefault(); performSearch();">
+                            <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-warning" type="submit">Search</button>
+                        </form>
+                        <button class="translator-toggle btn btn-sm ms-3" onclick="toggleGimini()">Translate BN</button>
+                    </div>
+                </div>
+            </nav>
+                    <option value="piece">Piece</option>
+                </select>
+
+                <label>Quantity</label>
+
+                <input
+                    type="number"
+                    id="broilerQuantity"
+                    value="1"
+                    min="0.1"
+                    step="0.1"
+                    oninput="calculateBroiler()"
+                >
+
+                <p class="calculation">
+                    Estimated Total:
+                    <strong>৳<span id="broilerTotal">220</span></strong>
+                </p>
+
+                <button class="order-btn"
+                        onclick="selectChicken('Broiler Chicken')">
+                    ORDER NOW
+                </button>
+
+            </div>
+
+
+            <!-- SONALI -->
+
+            <div class="chicken-card">
+
+                <img src="images/sonali.jpg" alt="Sonali Chicken">
+
+                <h2>Sonali Chicken</h2>
+
+                <p class="price">
+                    ৳<span id="sonaliPrice">350</span> / KG
+                </p>
+
+                <p class="available">
+                    Available Today
+                </p>
+
+                <label>Order By</label>
+
+                <select id="sonaliUnit" onchange="calculateSonali()">
+                    <option value="kg">KG</option>
+                    <option value="piece">Piece</option>
+                </select>
+
+                <label>Quantity</label>
+
+                <input
+                    type="number"
+                    id="sonaliQuantity"
+                    value="1"
+                    min="0.1"
+                    step="0.1"
+                    oninput="calculateSonali()"
+                >
+
+                <p class="calculation">
+                    Estimated Total:
+                    <strong>৳<span id="sonaliTotal">350</span></strong>
+                </p>
+
+                <button class="order-btn"
+                        onclick="selectChicken('Sonali Chicken')">
+                    ORDER NOW
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- CUSTOMER INFORMATION -->
+
+        <div class="customer-section">
+
+            <h2>Customer Information</h2>
+
+            <p>Please provide your information for order confirmation.</p>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Enter Your Full Name"
+            >
+
+            <input
+                type="email"
+                id="customerEmail"
+                placeholder="Enter Your Email Address"
+            >
+
+            <input
+                type="tel"
+                id="customerPhone"
+                placeholder="Enter Your Contact Number"
+            >
+
+            <textarea
+                id="customerAddress"
+                placeholder="Enter Your Delivery Address"
+                rows="4"
+            ></textarea>
+
+            <button class="place-order-btn" onclick="placeOrder()">
+                PLACE ORDER
+            </button>
+
+            <p id="orderMessage"></p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    /* -------------------------------
+       CHICKEN PRICE
+    -------------------------------- */
+
+    const broilerPrice = 220;
+    const sonaliPrice = 350;
+
+    /*
+       Average weight of one chicken.
+       You can change these values later.
+    */
+
+    const broilerAverageWeight = 1.5;
+    const sonaliAverageWeight = 1.2;
+
+
+    /* -------------------------------
+       BROILER CALCULATION
+    -------------------------------- */
+
+    function calculateBroiler() {
+
+        let unit = document.getElementById("broilerUnit").value;
+
+        let quantity =
+            parseFloat(document.getElementById("broilerQuantity").value) || 0;
+
+        let total;
+
+        if (unit === "kg") {
+
+            total = quantity * broilerPrice;
+
+        } else {
+
+            total =
+                quantity *
+                broilerAverageWeight *
+                broilerPrice;
+        }
+
+        document.getElementById("broilerTotal").innerText =
+            Math.round(total);
+    }
+
+
+    /* -------------------------------
+       SONALI CALCULATION
+    -------------------------------- */
+
+    function calculateSonali() {
+
+        let unit = document.getElementById("sonaliUnit").value;
+
+        let quantity =
+            parseFloat(document.getElementById("sonaliQuantity").value) || 0;
+
+        let total;
+
+        if (unit === "kg") {
+
+            total = quantity * sonaliPrice;
+
+        } else {
+
+            total =
+                quantity *
+                sonaliAverageWeight *
+                sonaliPrice;
+        }
+
+        document.getElementById("sonaliTotal").innerText =
+            Math.round(total);
+    }
+
+
+    /* -------------------------------
+       SELECT CHICKEN
+    -------------------------------- */
+
+    let selectedChicken = "";
+
+    function selectChicken(chicken) {
+
+        selectedChicken = chicken;
+
+        document.querySelector(".customer-section")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+        document.getElementById("orderMessage").innerText =
+            chicken + " selected. Please enter your information.";
+    }
+
+
+    /* -------------------------------
+       PLACE ORDER
+    -------------------------------- */
+
+    function placeOrder() {
+
+        let name =
+            document.getElementById("customerName").value.trim();
+
+        let email =
+            document.getElementById("customerEmail").value.trim();
+
+        let phone =
+            document.getElementById("customerPhone").value.trim();
+
+        let address =
+            document.getElementById("customerAddress").value.trim();
+
+
+        if (selectedChicken === "") {
+
+            alert("Please select a chicken first.");
+            return;
+        }
+
+
+        if (
+            name === "" ||
+            email === "" ||
+            phone === "" ||
+            address === ""
+        ) {
+
+            alert("Please fill in all customer information.");
+            return;
+        }
+
+
+        let order = {
+
+            chicken: selectedChicken,
+
+            customerName: name,
+
+            email: email,
+
+            phone: phone,
+
+            address: address,
+
+            date: new Date().toLocaleString()
+
+        };
+
+
+        localStorage.setItem(
+            "rahmanOrder",
+            JSON.stringify(order)
+        );
+
+
+        alert(
+            "Order placed successfully!\n\n" +
+            "Thank you, " + name + "!"
+        );
+
+
+        document.getElementById("orderMessage").innerText =
+            "Your order has been placed successfully. We will contact you soon.";
+
+    }
+
+</script>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
+```

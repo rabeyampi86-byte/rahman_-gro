@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Rahman Agro & Poultry Farm</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="contact-page">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="images/logo2.png" alt="Logo" style="height:44px;" class="me-2">Rahman Agro
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="order.html">ORDER</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="contact.html">CONTACT</a></li>
+                    </ul>
+                    <form class="d-flex" onsubmit="event.preventDefault(); performSearch();">
+                        <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-warning" type="submit">Search</button>
+                    </form>
+                    <button class="translator-toggle btn btn-sm ms-3" onclick="toggleGimini()">Translate BN</button>
+                </div>
+            </div>
+        </nav>
+
+    <section class="contact-content">
+        <h1>Contact Us</h1>
+        <p>If you have questions or want to place an order, please reach out.</p>
+
+        <div class="contact-grid">
+            <div>
+                <h3>Address</h3>
+                <p>Rahman Agro & Poultry Farm, Local Market, Your City</p>
+            </div>
+
+            <div>
+                <h3>Phone</h3>
+                <p>+880 1XXXXXXXXX</p>
+            </div>
+
+            <div>
+                <h3>Email</h3>
+                <p>info@rahmanagro.com</p>
+            </div>
+        </div>
+
+        <h2>Send a Message</h2>
+        <form id="contactForm" onsubmit="submitContact(event)">
+            <input type="text" id="contactName" placeholder="Your name" required>
+            <input type="email" id="contactEmail" placeholder="Your email" required>
+            <textarea id="contactMessage" placeholder="Your message" rows="5" required></textarea>
+            <button type="submit" class="contact-btn">Send Message</button>
+        </form>
+
+        <p id="contactStatus"></p>
+
+    </section>
+
+    <footer class="home-footer">
+
+        <div>
+            <h3>Rahman Agro & Poultry Farm</h3>
+            <p>Healthy poultry, proper care and reliable supply.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="join.html">Join Us</a>
+        </div>
+
+        <p class="copyright">© 2026 Rahman Agro & Poultry Farm. All Rights Reserved.</p>
+
+    </footer>
+
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

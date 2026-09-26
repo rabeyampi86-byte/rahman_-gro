@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Rahman Agro & Poultry Farm</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="join-page page-offset">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="images/logo2.png" alt="Logo" style="height:44px;" class="me-2">Rahman Agro
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="order.html">ORDER</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+                    </ul>
+                    <form class="d-flex" onsubmit="event.preventDefault(); performSearch();">
+                        <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-warning" type="submit">Search</button>
+                    </form>
+                    <button class="translator-toggle btn btn-sm ms-3" onclick="toggleGimini()">Translate BN</button>
+                </div>
+            </div>
+        </nav>
+
+
+    <!-- LOGIN FORM -->
+    <div class="join-form">
+
+        <h2>Login Here</h2>
+
+        <p class="join-intro">
+            Login to your Rahman Agro member account.
+        </p>
+
+        <input type="email" id="loginEmail" placeholder="Enter E-mail Here">
+
+        <input type="password" id="loginPassword" placeholder="Enter Password Here">
+
+        <button class="join-login-btn" onclick="loginUser()">
+            Login
+        </button>
+
+        <p id="loginMessage"></p>
+
+        <p class="join-link">
+            Don't have an account?<br>
+            <a href="signin.html">Sign up here</a>
+        </p>
+
+        <p class="join-social-title">Login with</p>
+
+<div class="join-social-icons">
+
+    <a href="#" title="Facebook">
+        <ion-icon name="logo-facebook"></ion-icon>
+    </a>
+
+    <a href="#" title="Instagram">
+        <ion-icon name="logo-instagram"></ion-icon>
+    </a>
+
+    <a href="#" title="Google">
+        <ion-icon name="logo-google"></ion-icon>
+    </a>
+
+    <a href="#" title="YouTube">
+        <ion-icon name="logo-youtube"></ion-icon>
+    </a>
+
+</div>
+    </div>
+
+</div>
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+
+<script>
+function loginUser() {
+
+    let email = document.getElementById("loginEmail").value.trim();
+    let password = document.getElementById("loginPassword").value;
+
+    if (email === "" || password === "") {
+        document.getElementById("loginMessage").innerText =
+            "Please enter your email and password.";
+        return;
+    }
+
+    let savedUser = JSON.parse(localStorage.getItem("rahmanUser"));
+
+    if (!savedUser) {
+        document.getElementById("loginMessage").innerText =
+            "No account found. Please sign up first.";
+        return;
+    }
+
+    if (email === savedUser.email && password === savedUser.password) {
+
+        localStorage.setItem("loggedIn", "true");
+
+        window.location.href = "member.html";
+
+    } else {
+
+        document.getElementById("loginMessage").innerText =
+            "Incorrect email or password.";
+
+    }
+}
+</script>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

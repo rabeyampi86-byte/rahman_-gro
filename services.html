@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Services</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="services page-offset">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+                    <div class="container-fluid">
+                        <a class="navbar-brand d-flex align-items-center" href="index.html">
+                            <img src="images/logo2.png" alt="Logo" style="height:44px;" class="me-2">Rahman Agro
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="mainNav">
+                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                                <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="services.html">SERVICES</a></li>
+                                <li class="nav-item"><a class="nav-link" href="order.html">ORDER</a></li>
+                                <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+                            </ul>
+                            <form class="d-flex" onsubmit="event.preventDefault(); performSearch();">
+                                <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-warning" type="submit">Search</button>
+                            </form>
+                            <button class="translator-toggle btn btn-sm ms-3" onclick="toggleGimini()">Translate BN</button>
+                        </div>
+                    </div>
+                </nav>
+
+        <!-- ================= HERO ================= -->
+        <section class="ra-service-hero">
+
+            <div class="ra-service-hero-content">
+
+                <h1>Our&nbsp;Services</h1>
+                <p>
+                    Quality poultry farming with proper care,
+                    healthy management and responsible farming practices.
+                </p>
+            </div>
+        </section>
+                        <div class="container">
+                                <br>
+                                <!-- Bootstrap 5 carousel -->
+                                <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-indicators">
+                                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                        </div>
+                                        <div class="carousel-inner text-center">
+                                                <div class="carousel-item active">
+                                                        <img src="images/10.jpg" class="d-block mx-auto" alt="Sonali" style="max-width:70%;height:auto;">
+                                                        <div class="carousel-caption d-none d-md-block">
+                                                                <h3>Sonali Chicken</h3>
+                                                                <p>Quality Sonali chickens raised in a clean and healthy environment.</p>
+                                                        </div>
+                                                </div>
+                                                <div class="carousel-item">
+                                                        <img src="images/7.jpg" class="d-block mx-auto" alt="Broiler" style="max-width:70%;height:auto;">
+                                                        <div class="carousel-caption d-none d-md-block">
+                                                                <h3>Broiler Chicken</h3>
+                                                                <p>Healthy broiler chickens raised with proper care and quality feed.</p>
+                                                        </div>
+                                                </div>
+                                                <div class="carousel-item">
+                                                        <img src="images/8.jpg" class="d-block mx-auto" alt="Farm" style="max-width:70%;height:auto;">
+                                                        <div class="carousel-caption d-none d-md-block">
+                                                                <h3>Our Poultry Farm</h3>
+                                                                <p>Proper farm management for healthy and quality poultry production.</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                        </button>
+                                </div>
+                        </div>
+
+
+        <!-- ================= SERVICE CARDS ================= -->
+
+        <section class="ra-service-overview">
+
+            <div class="ra-service-heading">
+
+                <span>WHAT WE DO</span>
+
+                <h2>Our Poultry Farming Services</h2>
+
+                <p>
+                    Rahman Agro & Poultry Farm focuses on raising healthy
+                    chickens through proper feeding, care and farm management.
+                </p>
+
+            </div>
+
+
+            <div class="ra-service-cards">
+
+                <!-- Broiler -->
+                <div class="ra-service-card">
+
+                    <div class="ra-service-card-image">
+                        <img src="images/b1.jpg" alt="Broiler Chicken Farming">
+                    </div>
+
+                    <div class="ra-service-card-content">
+
+                        <h3>Broiler Chicken Farming</h3>
+
+                        <p>
+                            We raise broiler chickens with proper nutrition,
+                            clean water, regular care and a hygienic farm
+                            environment.
+                        </p>
+
+                        <a href="#broiler">Learn More</a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Sonali -->
+                <div class="ra-service-card">
+
+                    <div class="ra-service-card-image">
+                        <img src="images/s1.jpg" alt="Sonali Chicken Farming">
+                    </div>
+
+                    <div class="ra-service-card-content">
+
+                        <h3>Sonali Chicken Farming</h3>
+
+                        <p>
+                            Our Sonali chickens are raised with proper care,
+                            nutrition and a clean environment to maintain
+                            healthy growth.
+                        </p>
+
+                        <a href="#sonali">Learn More</a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Farm Management -->
+                <div class="ra-service-card">
+
+                    <div class="ra-service-card-image">
+                        <img src="images/m1.jpg" alt="Poultry Farm Management">
+                    </div>
+
+                    <div class="ra-service-card-content">
+
+                        <h3>Farm Management</h3>
+
+                        <p>
+                            We maintain proper farm hygiene, feeding,
+                            ventilation and regular monitoring for healthy
+                            poultry production.
+                        </p>
+
+                        <a href="#management">Learn More</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= BROILER DETAILS ================= -->
+
+        <section class="ra-service-detail" id="broiler">
+
+            <div class="ra-service-detail-image">
+
+                <img src="images/b2.jpg" alt="Broiler Chicken">
+
+            </div>
+
+
+            <div class="ra-service-detail-text">
+
+                <span>01 — POULTRY FARMING</span>
+
+                <h2>Broiler Chicken Farming</h2>
+
+                <p>
+                    Rahman Agro & Poultry Farm raises broiler chickens
+                    with attention to proper feeding, clean water,
+                    hygiene and regular monitoring.
+                </p>
+
+                <p>
+                    Our goal is to maintain a healthy farming environment
+                    and ensure consistent quality throughout the farming
+                    process.
+                </p>
+
+                <ul>
+                    <li>Proper nutrition and feeding</li>
+                    <li>Clean drinking water</li>
+                    <li>Regular health monitoring</li>
+                    <li>Clean and hygienic environment</li>
+                    <li>Proper ventilation and farm care</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SONALI DETAILS ================= -->
+
+        <section class="ra-service-detail ra-service-detail-reverse" id="sonali">
+
+            <div class="ra-service-detail-image">
+
+                <img src="images/s1.jpg" alt="Sonali Chicken">
+
+            </div>
+
+
+            <div class="ra-service-detail-text">
+
+                <span>02 — POULTRY FARMING</span>
+
+                <h2>Sonali Chicken Farming</h2>
+
+                <p>
+                    Sonali chicken is another important part of our
+                    poultry farming. We provide proper care, nutrition
+                    and a suitable environment for healthy growth.
+                </p>
+
+                <p>
+                    We continuously monitor the birds and maintain
+                    cleanliness to support better farm management.
+                </p>
+
+                <ul>
+                    <li>Quality feed management</li>
+                    <li>Clean water supply</li>
+                    <li>Regular monitoring</li>
+                    <li>Hygienic farm environment</li>
+                    <li>Proper daily care</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FARM MANAGEMENT ================= -->
+
+        <section class="ra-service-detail" id="management">
+
+            <div class="ra-service-detail-image">
+
+                <img src="images/m2.jpg" alt="Poultry Farm Management">
+
+            </div>
+
+
+            <div class="ra-service-detail-text">
+
+                <span>03 — FARM MANAGEMENT</span>
+
+                <h2>Modern Farm Management</h2>
+
+                <p>
+                    Maintaining a clean and well-managed environment is
+                    essential for successful poultry farming.
+                </p>
+
+                <p>
+                    Our farm gives attention to cleanliness, feeding,
+                    ventilation and regular observation of the chickens.
+                </p>
+
+                <ul>
+                    <li>Farm cleanliness</li>
+                    <li>Proper ventilation</li>
+                    <li>Feed management</li>
+                    <li>Clean water</li>
+                    <li>Regular observation</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FARM STATISTICS ================= -->
+
+        <section class="ra-service-stats">
+
+            <div class="ra-service-stats-heading">
+
+                <span>OUR FARM</span>
+
+                <h2>Rahman Agro & Poultry Farm</h2>
+
+                <p>
+                    We currently maintain a poultry farm with
+                    approximately 3,000–4,000 chickens.
+                </p>
+
+            </div>
+
+
+            <div class="ra-service-stat-grid">
+
+                <div class="ra-service-stat">
+                    <h3>3,000–4,000</h3>
+                    <p>Chickens</p>
+                </div>
+
+                <div class="ra-service-stat">
+                    <h3>02</h3>
+                    <p>Chicken Types</p>
+                </div>
+
+                <div class="ra-service-stat">
+                    <h3>Broiler</h3>
+                    <p>Chicken Type</p>
+                </div>
+
+                <div class="ra-service-stat">
+                    <h3>Sonali</h3>
+                    <p>Chicken Type</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT CTA ================= -->
+
+        <section class="ra-service-contact">
+
+            <h2>Looking for Quality Poultry Products?</h2>
+
+            <p>
+                Get in touch with Rahman Agro & Poultry Farm
+                to learn more about our poultry farming.
+            </p>
+
+            <a href="#">Contact Us</a>
+
+        </section>
+
+
+
+        </div>    
+    </div>
+    <script src="js/main.js"></script>
+    <!-- Bootstrap 5 JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

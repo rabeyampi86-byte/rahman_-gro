@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Rahman Agro & Poultry Farm</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="signin-page page-offset">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="images/logo2.png" alt="Logo" style="height:44px;" class="me-2">Rahman Agro
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="order.html">ORDER</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+                    </ul>
+                    <form class="d-flex" onsubmit="event.preventDefault(); performSearch();">
+                        <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-warning" type="submit">Search</button>
+                    </form>
+                    <button class="translator-toggle btn btn-sm ms-3" onclick="toggleGimini()">Translate BN</button>
+                </div>
+            </div>
+        </nav>
+
+
+    <!-- SIGN UP FORM -->
+    <div class="signin-form">
+
+        <h2>Create Account</h2>
+
+        <p class="signin-intro">
+            Join Rahman Agro & Poultry Farm and stay connected with us.
+        </p>
+
+        <input 
+    type="text" 
+    id="signupName" 
+    placeholder="Enter Your Full Name"
+>
+
+<input 
+    type="email" 
+    id="signupEmail" 
+    placeholder="Enter Your Email Address"
+>
+
+<input 
+    type="password" 
+    id="signupPassword" 
+    placeholder="Create Your Password"
+>
+
+        <button class="signin-btn" onclick="createAccount()">
+            Create Account
+        </button>
+
+        <p id="signupMessage"></p>
+
+        <p class="signin-link">
+            Already have an account?<br>
+            <a href="join.html">Login here</a>
+        </p>
+
+    </div>
+
+</div>
+
+
+<script>
+function createAccount() {
+
+    let name = document.getElementById("signupName").value.trim();
+    let email = document.getElementById("signupEmail").value.trim();
+    let password = document.getElementById("signupPassword").value;
+
+    if (name === "" || email === "" || password === "") {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    let user = {
+        name: name,
+        email: email,
+        password: password
+    };
+
+    localStorage.setItem("rahmanUser", JSON.stringify(user));
+
+    alert("Account created successfully!");
+
+    window.location.href = "join.html";
+}
+</script>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Member Dashboard - Rahman Agro & Poultry Farm</title>
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="member-page page-offset">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="images/logo2.png" alt="Logo" style="height:44px;" class="me-2">Rahman Agro
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="order.html">ORDER</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+                    </ul>
+                    <form class="d-flex" onsubmit="event.preventDefault(); performSearch();">
+                        <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-warning" type="submit">Search</button>
+                    </form>
+                    <button class="translator-toggle btn btn-sm ms-3" onclick="toggleGimini()">Translate BN</button>
+                </div>
+            </div>
+        </nav>
+
+
+    <!-- MEMBER HERO -->
+    <section class="member-hero">
+
+        <div class="member-welcome">
+
+            <p class="member-label">MEMBER AREA</p>
+
+            <h1>
+                Welcome, <span id="memberName">Member</span>!
+            </h1>
+
+            <p>
+                Welcome to the Rahman Agro & Poultry Farm
+                member area. Here you can view your account
+                information and explore our farm services.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MEMBER INFORMATION -->
+    <section class="member-content">
+
+        <div class="member-card">
+
+            <div class="member-card-icon">👤</div>
+
+            <h2>My Account</h2>
+
+            <p>
+                <strong>Name:</strong>
+                <span id="userName"></span>
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                <span id="userEmail"></span>
+            </p>
+
+        </div>
+
+
+        <div class="member-card">
+
+            <div class="member-card-icon">🐔</div>
+
+            <h2>Our Poultry</h2>
+
+            <p>
+                Our farm raises healthy Broiler and Sonali
+                chickens with proper care and management.
+            </p>
+
+            <a href="services.html">View Services →</a>
+
+        </div>
+
+
+        <div class="member-card">
+
+            <div class="member-card-icon">🌱</div>
+
+            <h2>Farm Information</h2>
+
+            <p>
+                Learn more about our farming practices,
+                poultry birds and supply network.
+            </p>
+
+            <a href="about.html">Learn More →</a>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOGOUT -->
+    <section class="member-logout">
+
+        <button onclick="logoutUser()">Logout</button>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="home-footer">
+
+        <div>
+            <h3>Rahman Agro & Poultry Farm</h3>
+
+            <p>
+                Healthy poultry, proper care and reliable supply.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+        </div>
+
+        <p class="copyright">
+            © 2026 Rahman Agro & Poultry Farm. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</div>
+
+
+<script>
+
+    // Check whether user is logged in
+    let loggedIn = localStorage.getItem("loggedIn");
+    let savedUser = JSON.parse(localStorage.getItem("rahmanUser"));
+
+    if (loggedIn !== "true" || !savedUser) {
+
+        alert("Please login first.");
+
+        window.location.href = "join.html";
+
+    } else {
+
+        document.getElementById("memberName").textContent = savedUser.name;
+        document.getElementById("userName").textContent = savedUser.name;
+        document.getElementById("userEmail").textContent = savedUser.email;
+
+    }
+
+
+    // Logout
+    function logoutUser() {
+
+        localStorage.removeItem("loggedIn");
+
+        window.location.href = "join.html";
+
+    }
+
+</script>
+
+</body>
+</html>
+
+<script src="js/main.js"></script>
