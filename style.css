@@ -9,8 +9,8 @@
     min-height: 100vh;
     background: #f8f9fa;
 }
-.page-offset { padding-top: 90px; }
-body { padding-top: 90px; }
+.page-offset { padding-top: 0; }
+body { padding-top: 0; }
 .navbar{
     width: 100%;
     min-height: 75px;
@@ -2436,4 +2436,117 @@ ul li a:hover{
 
 .place-order-btn {
     margin-top: 5px;
+}
+/* =====================================================
+   FINAL BOOTSTRAP NAVBAR
+   ===================================================== */
+
+.main-navbar {
+    min-height: 75px;
+    background: #198754 !important;
+    padding: 0 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* LOGO */
+
+.navbar-logo {
+    width: 100px;
+    height: auto;
+    display: block;
+}
+
+.main-navbar .navbar-brand {
+    color: #fff !important;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.main-navbar .navbar-brand span {
+    color: #fff;
+}
+
+/* MENU */
+
+.main-navbar .navbar-nav {
+    gap: 8px;
+}
+
+.main-navbar .nav-link {
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 12px !important;
+    transition: 0.3s ease;
+}
+
+.main-navbar .nav-link:hover {
+    color: #ff7200 !important;
+}
+
+/* SEARCH */
+
+.navbar-search {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.navbar-search .form-control {
+    width: 180px;
+    height: 40px;
+    border: 1px solid #ff7200;
+    border-radius: 5px 0 0 5px;
+    box-shadow: none;
+}
+
+.navbar-search .form-control:focus {
+    border-color: #ff7200;
+    box-shadow: none;
+}
+
+.search-btn {
+    height: 40px;
+    padding: 0 18px;
+    border: 1px solid #ff7200;
+    border-radius: 0 5px 5px 0;
+    background: #ff7200;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background: #e56700;
+}
+
+/* MOBILE NAVBAR */
+
+@media (max-width: 991px) {
+
+    .main-navbar {
+        padding: 0 15px;
+    }
+
+    .main-navbar .navbar-collapse {
+        background: #198754;
+        padding: 15px;
+        margin-top: 5px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .main-navbar .navbar-nav {
+        gap: 0;
+        text-align: center;
+    }
+
+    .navbar-search {
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .navbar-search .form-control {
+        width: 220px;
+    }
+
 }
