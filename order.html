@@ -160,35 +160,52 @@
 
             <p>Please provide your information for order confirmation.</p>
 
-            <input
-                type="text"
-                id="customerName"
-                placeholder="Enter Your Full Name"
-            >
+           <section class="order-section" style="padding: 60px 20px; max-width: 600px; margin: 0 auto; font-family: 'Arial', sans-serif;">
+    <h2 style="text-align: center; color: #2c3e50; margin-bottom: 30px;">Place Your Order</h2>
+    
+    <form action="#" method="POST" style="background: #f9f9f9; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        
+        <!-- Chicken Type -->
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #333;">Select Poultry Type:</label>
+            <select name="chicken_type" required style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
+                <option value="" disabled selected>Choose an option</option>
+                <option value="broiler">Broiler Chicken</option>
+                <option value="sonali">Sonali Chicken</option>
+            </select>
+        </div>
 
-            <input
-                type="email"
-                id="customerEmail"
-                placeholder="Enter Your Email Address"
-            >
+        <!-- Quantity -->
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #333;">Quantity (KG or Pcs):</label>
+            <input type="number" name="quantity" placeholder="e.g., 500 KG or 200 Pcs" required style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; box-sizing: border-box;">
+        </div>
 
-            <input
-                type="tel"
-                id="customerPhone"
-                placeholder="Enter Your Contact Number"
-            >
+        <!-- Customer Name -->
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #333;">Your Name:</label>
+            <input type="text" name="customer_name" placeholder="Enter your full name" required style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; box-sizing: border-box;">
+        </div>
 
-            <textarea
-                id="customerAddress"
-                placeholder="Enter Your Delivery Address"
-                rows="4"
-            ></textarea>
+        <!-- Contact Number -->
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #333;">Phone Number:</label>
+            <input type="tel" name="phone" placeholder="01XXXXXXXXX" required style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; box-sizing: border-box;">
+        </div>
 
-            <button class="place-order-btn" onclick="placeOrder()">
-                PLACE ORDER
-            </button>
+        <!-- Delivery Address -->
+        <div style="margin-bottom: 25px;">
+            <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #333;">Delivery Address:</label>
+            <textarea name="address" rows="3" placeholder="Enter full delivery details" required style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; box-sizing: border-box; resize: vertical;"></textarea>
+        </div>
 
-            <p id="orderMessage"></p>
+        <!-- Submit Button -->
+        <button type="submit" style="width: 100%; background: #27ae60; color: white; padding: 14px; border: none; border-radius: 5px; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.3s;">
+            Confirm Order
+        </button>
+    </form>
+</section>
+
 
         </div>
 
@@ -370,6 +387,8 @@
 </script>
 
 <script src="js/main.js"></script>
+
+
 
 </body>
 </html>

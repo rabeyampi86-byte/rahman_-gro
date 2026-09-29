@@ -1,155 +1,288 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABOUT</title>
+
+    <title>About | Rahman Agro & Poultry Farm</title>
+
     <link rel="stylesheet" href="style.css">
+
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 </head>
 
 <body>
-
+    <div id="google_translate_element" style="display:none;"></div>
 <div class="about">
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <img src="images/logo2.png" alt="Logo" style="height:44px;" class="me-2">Rahman Agro
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top main-navbar">
+
+        <div class="container-fluid">
+
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img
+                    src="images/logo2.png"
+                    alt="Rahman Agro Logo"
+                    class="navbar-logo me-2"
+                >
+                <span>Rahman Agro</span>
+            </a>
+
+            <!-- Mobile menu button -->
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNav"
+                aria-controls="mainNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar content -->
+            <div class="collapse navbar-collapse" id="mainNav">
+
+                <!-- Menu -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            HOME
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link active"
+                            aria-current="page"
+                            href="about.html"
+                        >
+                            ABOUT
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">
+                            SERVICES
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="order.html">
+                            ORDER
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            CONTACT
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <!-- Search -->
+                <form
+                    class="navbar-search"
+                    onsubmit="event.preventDefault(); performSearch();"
+                >
+
+                    <input
+                        id="searchInput"
+                        class="form-control"
+                        type="search"
+                        placeholder="Search"
+                        aria-label="Search"
+                    >
+
+                    <button
+                        class="search-btn"
+                        type="submit"
+                    >
+                        Search
+                    </button>
+
+                </form>
+
+
+                <!-- Translator -->
+                <button
+                    class="translator-toggle btn btn-sm ms-lg-3 mt-2 mt-lg-0"
+                    onclick="toggleGimini()"
+                    type="button"
+                >
+                    Translate BN
                 </button>
-                <div class="collapse navbar-collapse" id="mainNav">
-                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">ABOUT</a></li>
-                        <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
-                        <li class="nav-item"><a class="nav-link" href="order.html">ORDER</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
-                    </ul>
-                    <form class="d-flex" onsubmit="event.preventDefault(); performSearch();">
-                        <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-warning" type="submit">Search</button>
-                    </form>
-                    <button class="translator-toggle btn btn-sm ms-3" onclick="toggleGimini()">Translate BN</button>
-                </div>
+
             </div>
-        </nav>
+        </div>
+
+    </nav>
 
 
-    <!-- About Section -->
+    <!-- ================= ABOUT INTRO ================= -->
+
     <div class="about-content page-offset">
 
         <div class="about-image">
-            <img src="images/p3.jpg" alt="Rahman Agro Poultry Farm">
+
+            <img
+                src="images/p3.jpg"
+                alt="Rahman Agro Poultry Farm"
+            >
+
         </div>
 
+
         <div class="about-text">
-            <h1>About Rahman Agro <br>
+
+            <h1>
+                About Rahman Agro <br>
                 <span>& Poultry Farm</span>
             </h1>
 
             <p>
-                Rahman Agro & Poultry Farm is a growing poultry farm dedicated to raising
-                healthy and quality Broiler and Sonali Chickens. Our Farm manages approximately
-                3,000 to 4,000 birds and focuses on proper care, feeding, hygiene, and a healthy
-                environment for better growth. We carefully manage our poultry birds throughout
-                their growing period and follow proper farming practices to maintain their health
-                and quality.
+                Rahman Agro & Poultry Farm is a growing poultry farm dedicated
+                to raising healthy and quality Broiler and Sonali Chickens.
+                Our Farm manages approximately 3,000 to 4,000 birds and
+                focuses on proper care, feeding, hygiene, and a healthy
+                environment for better growth. We carefully manage our
+                poultry birds throughout their growing period and follow
+                proper farming practices to maintain their health and quality.
             </p>
+
         </div>
 
     </div>
 
 
-    <!-- Farming Practices -->
+    <!-- ================= FARMING PRACTICES ================= -->
+
     <div class="about-section">
 
         <h3>Our Farming Practices</h3>
 
         <p>
-            Proper management is an important part of successful poultry farming. At Rahman Agro
-            & Poultry Farm, we focus on providing appropriate care to our birds during their
-            growing period. Feeding is an essential part of this process, and maintaining a
-            suitable feeding routine helps support healthy development. We also pay attention
-            to cleanliness and hygiene because maintaining a clean environment is an important
-            part of responsible poultry farming.
+            Proper management is an important part of successful poultry
+            farming. At Rahman Agro & Poultry Farm, we focus on providing
+            appropriate care to our birds during their growing period.
+            Feeding is an essential part of this process, and maintaining a
+            suitable feeding routine helps support healthy development. We
+            also pay attention to cleanliness and hygiene because maintaining
+            a clean environment is an important part of responsible poultry
+            farming.
 
             <br><br>
 
-            We regularly monitor the condition of our birds and try to maintain suitable
-            conditions within the farm. Good care is not limited to feeding alone; it also
-            involves maintaining the farm environment and paying attention to the birds
-            throughout their growth. Through consistent management and careful attention,
+            We regularly monitor the condition of our birds and try to
+            maintain suitable conditions within the farm. Good care is not
+            limited to feeding alone; it also involves maintaining the farm
+            environment and paying attention to the birds throughout their
+            growth. Through consistent management and careful attention,
             we work toward maintaining healthy and quality poultry birds.
         </p>
 
     </div>
 
 
-    <!-- Poultry Birds -->
+    <!-- ================= POULTRY BIRDS ================= -->
+
     <div class="about-section">
 
         <h3>Our Poultry Birds</h3>
 
         <p>
-            Rahman Agro & Poultry Farm mainly raises two types of chickens: Broiler and Sonali.
-            Both types are managed at our farm throughout their growing period before they are
-            supplied to local retailers. Our focus is to raise the birds with proper care and
-            provide them with suitable conditions for healthy growth.
+            Rahman Agro & Poultry Farm mainly raises two types of chickens:
+            Broiler and Sonali. Both types are managed at our farm throughout
+            their growing period before they are supplied to local retailers.
+            Our focus is to raise the birds with proper care and provide them
+            with suitable conditions for healthy growth.
 
             <br><br>
 
-            Broiler chickens are an important part of our poultry operation, while Sonali
-            chickens are also raised according to the needs of the local market. By working
-            with both types of poultry birds, we are able to serve different requirements of
-            local retailers and contribute to the regular supply of poultry birds in our area.
+            Broiler chickens are an important part of our poultry operation,
+            while Sonali chickens are also raised according to the needs of
+            the local market. By working with both types of poultry birds,
+            we are able to serve different requirements of local retailers
+            and contribute to the regular supply of poultry birds in our area.
         </p>
 
     </div>
 
 
-    <!-- Supply & Retail Network -->
+    <!-- ================= SUPPLY & RETAIL NETWORK ================= -->
+
     <div class="about-section">
 
         <h3>Our Supply & Retail Network</h3>
 
         <p>
-            After the birds reach the appropriate stage for supply, Rahman Agro & Poultry Farm
-            provides them to local shopkeepers and retailers. Our relationship with local
-            retailers is an important part of our farm and connection with the customers in
-            the local market. We aim to maintain a reliable supply of poultry birds so that
-            our retail partners can continue to meet the needs of their customers.
+            After the birds reach the appropriate stage for supply,
+            Rahman Agro & Poultry Farm provides them to local shopkeepers
+            and retailers. Our relationship with local retailers is an
+            important part of our farm and connection with the customers
+            in the local market. We aim to maintain a reliable supply of
+            poultry birds so that our retail partners can continue to meet
+            the needs of their customers.
 
             <br><br>
 
-            We believe that a successful poultry business depends not only on raising healthy
-            birds but also on maintaining good relationships with the people and businesses
-            we work with. For this reason, we value reliability, consistent service, and
+            We believe that a successful poultry business depends not only
+            on raising healthy birds but also on maintaining good
+            relationships with the people and businesses we work with.
+            For this reason, we value reliability, consistent service, and
             responsible farm management as important parts of our business.
         </p>
+
 
         <!-- ================= CONTACT CTA ================= -->
 
         <section class="ra-service-contact">
 
-            <h2>Looking for Quality Poultry Products?</h2>
+            <h2>
+                Looking for Quality Poultry Products?
+            </h2>
 
             <p>
                 Get in touch with Rahman Agro & Poultry Farm
                 to learn more about our poultry farming.
             </p>
 
-            <a href="#">Contact Us</a>
+            <a href="contact.html">
+                Contact Us
+            </a>
 
         </section>
 
     </div>
 
-    <script src="js/main.js"></script>
+
 </div>
+
+
+<!-- ================= SCRIPTS ================= -->
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- Main JavaScript -->
+<script src="js/main.js"></script>
+
+<!-- Ionicons -->
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 
 </body>
 </html>
+```

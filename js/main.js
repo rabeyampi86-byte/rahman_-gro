@@ -63,71 +63,64 @@
         e.target.reset();
     };
 
-    // Very small English->Bangla dictionary for demo; for larger coverage use API or larger dataset.
-    const enToBn = {
-        'welcome':'স্বাগতম',
-        'farm':'খামার',
-        'chicken':'মুরগি',
-        'broiler':'ব্রয়লার',
-        'sonali':'সোনালি',
-        'order':'অর্ডার',
-        'contact':'যোগাযোগ',
-        'services':'সেবা',
-        'about':'সম্পর্কিত'
-    };
+    ```javascript
+// =====================================================
+// AUTOMATIC ENGLISH -> BANGLA TRANSLATOR
+// =====================================================
 
-    window.giminiTranslate = function(toLang){
-        // only supports 'bn' for Bangla in this demo
-        if(toLang !== 'bn') return;
-        // Walk text nodes and replace words from dictionary
-        const selectors = ['body'];
-        for(const sel of selectors){
-            const root = document.querySelector(sel);
-            if(!root) continue;
-            const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-            const nodes = [];
-            while(walker.nextNode()) nodes.push(walker.currentNode);
-            for(const node of nodes){
-                let text = node.nodeValue;
-                // avoid translating inside inputs, script, style
-                if(node.parentNode && ['SCRIPT','STYLE','INPUT','TEXTAREA'].includes(node.parentNode.tagName)) continue;
-                // simple whole-word replacement
-                Object.keys(enToBn).forEach(en => {
-                    const re = new RegExp('\\b'+en+'\\b','gi');
-                    text = text.replace(re, function(m){
-                        // preserve case
-                        const bn = enToBn[en];
-                        return bn;
-                    });
-                });
-                if(text !== node.nodeValue) node.nodeValue = text;
-            }
-        }
-    };
+window._gimini = {
+    active: false
+};
 
-    // Toggle translator with ability to restore original text
-    window._gimini = { active: false, originals: [] };
-    window.toggleGimini = function(){
-        if(!window._gimini.active){
-            // store original text nodes and translate
-            const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-            const nodes = [];
-            while(walker.nextNode()){
-                const n = walker.currentNode;
-                if(n.parentNode && ['SCRIPT','STYLE','INPUT','TEXTAREA'].includes(n.parentNode.tagName)) continue;
-                nodes.push(n);
-            }
-            nodes.forEach(n => window._gimini.originals.push({node: n, text: n.nodeValue}));
-            window.giminiTranslate('bn');
-            window._gimini.active = true;
-            document.querySelectorAll('.translator-toggle').forEach(b=> b.innerText = 'Show English');
-        } else {
-            // restore
-            window._gimini.originals.forEach(item => { try{ item.node.nodeValue = item.text } catch(e){} });
-            window._gimini.originals = [];
-            window._gimini.active = false;
-            document.querySelectorAll('.translator-toggle').forEach(b=> b.innerText = 'Translate BN');
-        }
-    };
+window.toggleGimini = function () {
+
+    const select = document.querySelector('.goog-te-combo');
+
+    if (!select) {
+        alert('Translator is loading. Please wait a moment and try again.');
+        return;
+    }
+
+    if (!window._gimini.active) {
+
+        // Translate to Bangla
+        select.value = 'bn';
+        select.dispatchEvent(new Event('change'));
+
+        window._gimini.active = true;
+
+        document.querySelectorAll('.translator-toggle').forEach(function (button) {
+            button.innerText = 'Show English';
+        });
+
+    } else {
+
+        // Return to English
+        select.value = 'en';
+        select.dispatchEvent(new Event('change'));
+
+        window._gimini.active = false;
+
+        document.querySelectorAll('.translator-toggle').forEach(function (button) {
+            button.innerText = 'Translate BN';
+        });
+    }
+};
+
+
+// Google Translate initialization
+function googleTranslateElementInit() {
+
+    new google.translate.TranslateElement(
+        {
+            pageLanguage: 'en',
+            includedLanguages: 'en,bn',
+            autoDisplay: false
+        },
+        'google_translate_element'
+    );
+
+}
+```
 
 })();

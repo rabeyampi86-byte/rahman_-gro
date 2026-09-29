@@ -28,10 +28,35 @@
                         <li class="nav-item"><a class="nav-link" href="order.html">ORDER</a></li>
                         <li class="nav-item"><a class="nav-link active" href="contact.html">CONTACT</a></li>
                     </ul>
-                    <form class="d-flex" onsubmit="event.preventDefault(); performSearch();">
-                        <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-warning" type="submit">Search</button>
-                    </form>
+                    <section class="contact-section" style="padding: 60px 20px; max-width: 1000px; margin: 0 auto; font-family: 'Arial', sans-serif;">
+    <h2 style="text-align: center; color: #2c3e50; margin-bottom: 40px;">Contact Our Farm</h2>
+    
+    <div class="contact-container" style="display: flex; flex-wrap: wrap; gap: 40px;">
+        
+        <!-- Left Side: Contact Info -->
+        <div class="contact-info" style="flex: 1; min-width: 280px; background: #eef7f2; padding: 30px; border-radius: 10px;">
+            <h3 style="color: #27ae60; margin-top: 0;">Get In Touch</h3>
+            <p style="margin: 15px 0; color: #555;">📍 <strong>Address:</strong> Your Farm Location, Village, District</p>
+            <p style="margin: 15px 0; color: #555;">📞 <strong>Hotline:</strong> +880 1XXXXXXXXX</p>
+            <p style="margin: 15px 0; color: #555;">✉️ <strong>Email:</strong> info@rahmanagro.com</p>
+            <p style="margin: 15px 0; color: #555;">⏰ <strong>Farm Hours:</strong> 08:00 AM - 08:00 PM</p>
+        </div>
+        
+        <!-- Right Side: Inquiry Form -->
+        <div class="contact-form" style="flex: 1.5; min-width: 300px;">
+            <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+                <input type="text" placeholder="Your Name" required style="padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
+                <input type="email" placeholder="Your Email Address" style="padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
+                <input type="tel" placeholder="Phone Number" required style="padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
+                <textarea placeholder="Write your message or inquiry here..." rows="4" required style="padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; resize: vertical;"></textarea>
+                <button type="submit" style="background: #2c3e50; color: white; padding: 12px; border: none; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s;">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
                     <button class="translator-toggle btn btn-sm ms-3" onclick="toggleGimini()">Translate BN</button>
                 </div>
             </div>

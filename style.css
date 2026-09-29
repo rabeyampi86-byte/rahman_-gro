@@ -38,7 +38,7 @@ body { padding-top: 0; }
 }
 
 .logo{
-    font-size: 35px;
+    font-size: 24px;
     font-family: Arial;
     padding-left: 25px;
     float: left;
@@ -2549,4 +2549,62 @@ ul li a:hover{
         width: 220px;
     }
 
+}
+/* ==============================
+   ABOUT PAGE - NAVBAR SPACING
+================================ */
+
+.about-content {
+    padding-top: 80px !important;
+}
+/* =====================================================
+   SAME NAVBAR LOGO SIZE ON ALL PAGES
+   ===================================================== */
+
+.main-navbar .navbar-brand {
+    display: flex !important;
+    align-items: center !important;
+    color: #fff !important;
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+}
+
+.main-navbar .navbar-brand span {
+    color: #fff !important;
+    font-size: 28px !important;
+    font-weight: 700 !important;
+}
+
+.main-navbar .navbar-logo {
+    width: 100px !important;
+    height: auto !important;
+    display: block !important;
+}
+/* =====================================================
+   COMMON NAVBAR LOGO
+   ===================================================== */
+
+.main-navbar .navbar-brand {
+    display: flex !important;
+    align-items: center !important;
+    color: #fff !important;
+    font-size: 28px !important;
+    font-family: Arial, sans-serif !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    padding: 0 !important;
+    float: none !important;
+}
+
+.main-navbar .navbar-brand span {
+    color: #fff !important;
+    font-size: 28px !important;
+    font-weight: 700 !important;
+}
+
+.main-navbar .navbar-logo {
+    width: 100px !important;
+    height: auto !important;
+    display: block !important;
 }
