@@ -63,7 +63,7 @@
         e.target.reset();
     };
 
-    ```javascript
+    javascript
 // =====================================================
 // AUTOMATIC ENGLISH -> BANGLA TRANSLATOR
 // =====================================================
@@ -121,6 +121,6 @@ function googleTranslateElementInit() {
     );
 
 }
-```
+
 
 })();

@@ -4,22 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Rahman Agro & Poultry Farm</title>
+    <meta name="description" content="Contact Rahman Agro & Poultry Farm for healthy poultry, reliable delivery, and farm inquiries.">
     <link rel="stylesheet" href="style.css">
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <div id="google_translate_element" class="google-translate-element" aria-hidden="true"></div>
 
-<div class="contact-page">
-
-        <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+    <div class="contact-page page-offset">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top main-navbar">
             <div class="container-fluid">
-                <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <img src="images/logo2.png" alt="Logo" style="height:44px;" class="me-2">Rahman Agro
+                <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="Rahman Agro home page">
+                    <img src="images/logo2.png" alt="Rahman Agro Logo" class="navbar-logo me-2">
+                    <span>Rahman Agro</span>
                 </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
@@ -28,93 +31,122 @@
                         <li class="nav-item"><a class="nav-link" href="order.html">ORDER</a></li>
                         <li class="nav-item"><a class="nav-link active" href="contact.html">CONTACT</a></li>
                     </ul>
-                    <section class="contact-section" style="padding: 60px 20px; max-width: 1000px; margin: 0 auto; font-family: 'Arial', sans-serif;">
-    <h2 style="text-align: center; color: #2c3e50; margin-bottom: 40px;">Contact Our Farm</h2>
-    
-    <div class="contact-container" style="display: flex; flex-wrap: wrap; gap: 40px;">
-        
-        <!-- Left Side: Contact Info -->
-        <div class="contact-info" style="flex: 1; min-width: 280px; background: #eef7f2; padding: 30px; border-radius: 10px;">
-            <h3 style="color: #27ae60; margin-top: 0;">Get In Touch</h3>
-            <p style="margin: 15px 0; color: #555;">📍 <strong>Address:</strong> Your Farm Location, Village, District</p>
-            <p style="margin: 15px 0; color: #555;">📞 <strong>Hotline:</strong> +880 1XXXXXXXXX</p>
-            <p style="margin: 15px 0; color: #555;">✉️ <strong>Email:</strong> info@rahmanagro.com</p>
-            <p style="margin: 15px 0; color: #555;">⏰ <strong>Farm Hours:</strong> 08:00 AM - 08:00 PM</p>
-        </div>
-        
-        <!-- Right Side: Inquiry Form -->
-        <div class="contact-form" style="flex: 1.5; min-width: 300px;">
-            <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
-                <input type="text" placeholder="Your Name" required style="padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
-                <input type="email" placeholder="Your Email Address" style="padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
-                <input type="tel" placeholder="Phone Number" required style="padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
-                <textarea placeholder="Write your message or inquiry here..." rows="4" required style="padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; resize: vertical;"></textarea>
-                <button type="submit" style="background: #2c3e50; color: white; padding: 12px; border: none; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s;">
-                    Send Message
-                </button>
-            </form>
-        </div>
-    </div>
-</section>
 
-                    <button class="translator-toggle btn btn-sm ms-3" onclick="toggleGimini()">Translate BN</button>
+                    <form class="navbar-search" onsubmit="event.preventDefault(); performSearch();">
+                        <input id="searchInput" class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        <button class="search-btn" type="submit">Search</button>
+                    </form>
                 </div>
             </div>
         </nav>
 
-    <section class="contact-content">
-        <h1>Contact Us</h1>
-        <p>If you have questions or want to place an order, please reach out.</p>
+        <main class="contact-main">
+            <section class="contact-hero">
+                <div class="container">
+                    <div class="contact-hero-content">
+                        <p class="section-kicker">Reach out</p>
+                        <h1>Let’s grow your poultry business together.</h1>
+                        <p>We care about healthy birds, dependable supply, and strong partnerships with retailers, customers, and farm buyers.</p>
+                    </div>
+                </div>
+            </section>
 
-        <div class="contact-grid">
+            <section class="contact-section">
+                <div class="container">
+                    <div class="contact-grid">
+                        <div class="contact-info">
+                            <p class="section-kicker accent">Contact us</p>
+                            <h2>We are here to help.</h2>
+                            <p>Whether you want to place an order, ask about our poultry products, or learn more about our farm, our team is ready to assist.</p>
+
+                            <div class="contact-list">
+                                <div class="contact-item">
+                                    <span>Visit us</span>
+                                    <strong>Jashatua, Ratanpur,<br>Nabinagar, Brahmanbaria</strong>
+                                </div>
+
+                                <div class="contact-item">
+                                    <span>Call us</span>
+                                    <a href="tel:+8801742930082">+880 1742 930 082</a>
+                                </div>
+
+                                <div class="contact-item">
+                                    <span>Email us</span>
+                                    <a href="mailto:hello@rahmanagro.com">hello@rahmanagro.com</a>
+                                    <span>Follow us in Facebook</span>
+                                    <a href="https://www.facebook.com/share/14qFGSY2b2r/">Rahman Agro Poultry Farm</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-form-wrap">
+                            <form id="contactForm" class="contact-form" onsubmit="submitContact(event)">
+                                <div class="form-row">
+                                    <div class="field">
+                                        <label for="contactName">Your name</label>
+                                        <input id="contactName" name="name" type="text" required>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="contactEmail">Email address</label>
+                                        <input id="contactEmail" name="email" type="email" required>
+                                    </div>
+                                </div>
+
+                                <div class="field field-full">
+                                    <label for="contactSubject">What can we help with?</label>
+                                    <select id="contactSubject" name="subject">
+                                        <option>Place an order</option>
+                                        <option>Ask about poultry products</option>
+                                        <option>Business partnership</option>
+                                        <option>General inquiry</option>
+                                    </select>
+                                </div>
+
+                                <div class="field field-full">
+                                    <label for="contactMessage">Your message</label>
+                                    <textarea id="contactMessage" name="message" rows="6" required></textarea>
+                                </div>
+
+                                <button class="contact-submit" type="submit">Send Message</button>
+                                <p id="contactStatus" class="contact-status" aria-live="polite"></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-map">
+                <div class="container">
+                    <div class="map-frame">
+                        <iframe title="Rahman Agro office location" src="https://www.google.com/maps?q=Jashatua%2C%20Ratanpur%2C%20Nabinagar%2C%20Brahmanbaria&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="home-footer">
             <div>
-                <h3>Address</h3>
-                <p>Rahman Agro & Poultry Farm, Local Market, Your City</p>
+                <h3>Rahman Agro & Poultry Farm</h3>
+                <p>Healthy poultry, proper care and reliable supply.</p>
             </div>
 
-            <div>
-                <h3>Phone</h3>
-                <p>+880 1XXXXXXXXX</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="join.html">Join Us</a>
             </div>
 
-            <div>
-                <h3>Email</h3>
-                <p>info@rahmanagro.com</p>
-            </div>
-        </div>
+            <p class="copyright">© 2026 Rahman Agro & Poultry Farm. All Rights Reserved.</p>
+        </footer>
+    </div>
 
-        <h2>Send a Message</h2>
-        <form id="contactForm" onsubmit="submitContact(event)">
-            <input type="text" id="contactName" placeholder="Your name" required>
-            <input type="email" id="contactEmail" placeholder="Your email" required>
-            <textarea id="contactMessage" placeholder="Your message" rows="5" required></textarea>
-            <button type="submit" class="contact-btn">Send Message</button>
-        </form>
+    <button class="translator-toggle" type="button" onclick="toggleGimini()">Translate BN</button>
 
-        <p id="contactStatus"></p>
-
-    </section>
-
-    <footer class="home-footer">
-
-        <div>
-            <h3>Rahman Agro & Poultry Farm</h3>
-            <p>Healthy poultry, proper care and reliable supply.</p>
-        </div>
-
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="join.html">Join Us</a>
-        </div>
-
-        <p class="copyright">© 2026 Rahman Agro & Poultry Farm. All Rights Reserved.</p>
-
-    </footer>
-
-</div>
-
-<script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
+

@@ -13,30 +13,78 @@
 
 <div class="join-page page-offset">
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <img src="images/logo2.png" alt="Logo" style="height:44px;" class="me-2">Rahman Agro
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="mainNav">
-                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
-                        <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
-                        <li class="nav-item"><a class="nav-link" href="order.html">ORDER</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
-                    </ul>
-                    <form class="d-flex" onsubmit="event.preventDefault(); performSearch();">
-                        <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-warning" type="submit">Search</button>
-                    </form>
-                    <button class="translator-toggle btn btn-sm ms-3" onclick="toggleGimini()">Translate BN</button>
-                </div>
-            </div>
-        </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top main-navbar">
+    <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo2.png" alt="Rahman Agro Logo" class="navbar-logo me-2">
+        <span>Rahman Agro</span>
+    </a>
+
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">HOME</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">ABOUT</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="services.html">SERVICES</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="order.html">ORDER</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">CONTACT</a>
+            </li>
+
+        </ul>
+
+        <form class="navbar-search"
+              onsubmit="event.preventDefault(); performSearch();">
+
+            <input
+                id="searchInput"
+                class="form-control"
+                type="search"
+                placeholder="Search"
+                aria-label="Search">
+
+            <button class="search-btn" type="submit">
+                Search
+            </button>
+
+        </form>
+
+        <button
+            class="translator-toggle btn btn-sm ms-lg-3 mt-2 mt-lg-0"
+            onclick="toggleGimini()"
+            type="button">
+            Translate BN
+        </button>
+
+    </div>
+</div>
+
+</nav>
+
 
 
     <!-- LOGIN FORM -->
@@ -67,7 +115,7 @@
 
 <div class="join-social-icons">
 
-    <a href="#" title="Facebook">
+    <a href="https://www.facebook.com/share/14qFGSY2b2r/" title="Facebook">
         <ion-icon name="logo-facebook"></ion-icon>
     </a>
 
@@ -75,7 +123,7 @@
         <ion-icon name="logo-instagram"></ion-icon>
     </a>
 
-    <a href="#" title="Google">
+    <a href="https://rahman-agro.info/" title="Google">
         <ion-icon name="logo-google"></ion-icon>
     </a>
 
@@ -86,6 +134,28 @@
 </div>
     </div>
 
+    <!-- ================= FOOTER ================= -->
+    <footer class="home-footer">
+
+        <div>
+            <h3>Rahman Agro & Poultry Farm</h3>
+            <p>
+                Healthy poultry, proper care and reliable supply.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="join.html">Join Us</a>
+        </div>
+
+        <p class="copyright">
+            © 2026 Rahman Agro & Poultry Farm. All Rights Reserved.
+        </p>
+
+    </footer>
 </div>
 <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
 
@@ -124,6 +194,7 @@ function loginUser() {
 }
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
 
 </body>
